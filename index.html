@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <title>Crypto Price Tracker</title>
+</head>
+<body>
+    <div id="settings">
+        <form name="settings">
+            <label for="row_num">Rows:</label>
+            <select name="row_num" id="row_num" onchange="createRows(settings.row_num.value)">
+                <option value="10">10</option>
+                <option value="10">25</option>
+                <option value="10">50</option>
+                <option value="10">75</option>
+                <option value="10">100</option>
+            </select>
+        </form>
+    </div>
+    <div id="container">
+        <div data-list class="list">
+            <div class="header">
+                <span>Image</span>
+                <span>Name</span>
+                <span>Symbol</span>
+                <span>USD</span>
+                <span>HUF</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

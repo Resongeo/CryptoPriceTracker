@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "electron": "^18.1.0"
+  },
+  "name": "cryptopricetracker",
+  "version": "1.0.0",
+  "description": "Simple application for showing the most popular crypro currencies prices",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Somogyvári Benedek",
+  "license": "MIT"
+}
