@@ -6,9 +6,16 @@ let MainWindow
 app.on("ready", function(){
     MainWindow = new BrowserWindow({
         width: 1600,
+        minWidth: 1000,
         height: 900,
+        minHeight: 600,
         center: true,
-        darkTheme: true
+        darkTheme: true,
+        frame: false,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
     })
 
     MainWindow.loadFile("index.html")

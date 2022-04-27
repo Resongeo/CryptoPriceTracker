@@ -6,15 +6,30 @@
     <title>Crypto Price Tracker</title>
 </head>
 <body>
+    <div class="topbar">
+        <div class="drag-area dragable"></div>
+        <h1>Crypto Price Tracker</h1>
+        <ul>
+            <li>
+                <div onclick="MinimizeApp()" class="bg-green"></div>
+            </li>
+            <li>
+                <div onclick="MaximizeApp()" class="bg-yellow"></div>
+            </li>
+            <li>
+                <div onclick="CloseApp()" class="bg-red"></div>
+            </li>
+        </ul>
+    </div>
     <div id="settings">
         <form name="settings">
             <label for="row_num">Rows:</label>
             <select name="row_num" id="row_num" onchange="createRows(settings.row_num.value)">
                 <option value="10">10</option>
-                <option value="10">25</option>
-                <option value="10">50</option>
-                <option value="10">75</option>
-                <option value="10">100</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
             </select>
         </form>
     </div>

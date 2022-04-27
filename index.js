@@ -1,7 +1,11 @@
+const electron = require("electron")
+const { ipcRenderer } = electron
+
 var request = new XMLHttpRequest()
 var data
 
 var list = document.querySelector("[data-list]")
+var row_num = document.getElementById("row-num")
 var containers = []
 
 var defaultRowNumber = 10
@@ -27,8 +31,8 @@ function RefreshData() {
         item.children[0].src = data[index].image
         item.children[1].innerHTML = data[index].name
         item.children[2].innerHTML = data[index].symbol.toUpperCase()
-        item.children[3].innerHTML = "$" + data[index].current_price.toFixed(4)
-        item.children[4].innerHTML = "Ft " + (data[index].current_price * 350).toFixed(4)
+        item.children[3].innerHTML = "$" + data[index].current_price.toFixed(0)
+        item.children[4].innerHTML = "Ft " + (data[index].current_price * 350).toFixed(0)
     })
 }
 
@@ -61,6 +65,18 @@ function createRows(value){
     }
 
     RefreshData()
+}
+
+function MinimizeApp(){
+    ipcRenderer.send("app:controls", "minimize")
+}
+
+function MaximizeApp(){
+    ipcRenderer.send("app:controls", "maximize")
+}
+
+function CloseApp(){
+    ipcRenderer.send("app:controls", "close")
 }
 
 Update()
